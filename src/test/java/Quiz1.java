@@ -19,8 +19,8 @@ public class Quiz1 {
     public void QuizSteps()  {
         driver.get("https://demoqa.com/login");
         driver.manage().window().maximize();
-        WebElement html = driver.findElement(By.tagName("html"));
-        html.sendKeys(Keys.chord(Keys.CONTROL, Keys.ADD));
+//         WebElement html = driver.findElement(By.tagName("html"));
+//         html.sendKeys(Keys.chord(Keys.CONTROL, Keys.ADD));
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 
         // Step:Login
