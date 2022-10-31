@@ -1,8 +1,9 @@
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import static io.restassured.RestAssured.given;
-import static org.hamcrest.Matchers.equalTo;
+import static io.restassured.RestAssured.*;
+import static org.hamcrest.Matchers.*;
+
 
 public class Task3Tests {
     String booksURI="https://bookstore.toolsqa.com/BookStore/v1/Books";
@@ -35,10 +36,11 @@ public class Task3Tests {
                 .when()
                 .get(booksURI)
                 .then()
+                .log().all()
                 .assertThat()
-                .body("books[0].pages", equalTo(234),
-                "books[1].pages", equalTo(254));
+                .body("books[0,1].pages",hasItems(234,254));
 
     }
+
 }
 
