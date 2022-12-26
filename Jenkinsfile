@@ -1,7 +1,7 @@
 pipeline {
   agent any
   stages {
-    stage('Run Maven Project') {
+    stage('Build') {
       parallel {
         stage('Run Maven Project') {
           steps {
